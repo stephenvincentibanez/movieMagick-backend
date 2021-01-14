@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, key: "_movie_magick_app", domain: "https://movie-magick.herokuapp.com"
