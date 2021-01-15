@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :reviews
+  resources :movies
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   delete :logout, to: "sessions#logout"
