@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :genre_movies
+  resources :genres
   resources :reviews
   resources :movies
   resources :sessions, only: [:create]

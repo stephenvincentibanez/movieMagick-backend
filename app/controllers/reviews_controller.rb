@@ -3,19 +3,18 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
-
-    render json: @reviews
+    reviews = Review.all
+    render json: reviews
   end
 
   # GET /reviews/1
   def show
-    render json: @review
+    render json: review
   end
 
   # POST /reviews
   def create
-    @review = Review.new(review_params)
+    review = Review.new(review_params)
 
     if @review.save
       render json: @review, status: :created, location: @review
