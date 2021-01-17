@@ -8,28 +8,31 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1
-  def show
-    render json: review
-  end
+  # def show
+  #   render json: review
+  # end
 
   # POST /reviews
   def create
-    review = Review.new(review_params)
-
-    if @review.save
-      render json: @review, status: :created, location: @review
-    else
-      render json: @review.errors, status: :unprocessable_entity
-    end
+    review = Review.create(user_id: params[:user.id], text: params[:text], rating: params[:rating])
+    # review = Review.new(review_params)
+    # if @review.save
+    #   render json: @review, status: :created, location: @review
+    # else
+    #   render json: @review.errors, status: :unprocessable_entity
+    # end
   end
 
   # PATCH/PUT /reviews/1
   def update
-    if @review.update(review_params)
-      render json: @review
-    else
-      render json: @review.errors, status: :unprocessable_entity
-    end
+    review = Review.find_by_id(params[:id])
+    review.update(text: params[:text], rating: params[:rating])
+    render json: review
+    # if @review.update(review_params)
+    #   render json: @review
+    # else
+    #   render json: @review.errors, status: :unprocessable_entity
+    # end
   end
 
   # DELETE /reviews/1
