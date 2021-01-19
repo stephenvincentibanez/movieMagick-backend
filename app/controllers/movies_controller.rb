@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
     omdb = ENV["OMDB_API_KEY"]
     response = RestClient.get("http://www.omdbapi.com/?i=tt3896198&apikey=#{omdb}")
     json = JSON.parse(response)
+    render json: json
   end 
 
   # GET /movies
