@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-    review = Review.create(user_id: params[:user.id], text: params[:text], rating: params[:rating])
+    review = Review.create(user_id: params[:user.id], movie_id: params[:movie.id] text: params[:text], rating: params[:rating])
     # review = Review.new(review_params)
     # if @review.save
     #   render json: @review, status: :created, location: @review
