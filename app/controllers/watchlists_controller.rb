@@ -9,7 +9,8 @@ class WatchlistsController < ApplicationController
 
   # GET /watchlists/1
   def show
-    render json: @watchlist
+    watchlist = Watchlist.find_by_id(params[:id])
+    render json: watchlist
   end
 
   # POST /watchlists
@@ -45,6 +46,6 @@ class WatchlistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def watchlist_params
-      params.fetch(:watchlist, {})
+      params.require(:watchlist).permit(:user_id, :movie_id)
     end
 end

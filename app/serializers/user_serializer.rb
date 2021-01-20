@@ -1,14 +1,14 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :reviews, :movies
+  attributes :id, :username, :reviews, :movies, :watchlists
 
-  # def review
-  #   object.reviews
-  # end 
-
-  def movie 
+  def movie
     object.movies
   end
 
+  def watchlist
+    object.watchlists
+  end
+
   has_many :reviews
-  # has_many :movies, through: :reviews
+  has_many :watchlists
 end
