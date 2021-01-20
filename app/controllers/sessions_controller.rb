@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         if @current_user
             render json: {
                 logged_in: true,
-                user: @current_user
+                user: @current_user.attributes.merge({reviews: @current_user.reviews})
             }
         else 
             render json: {
