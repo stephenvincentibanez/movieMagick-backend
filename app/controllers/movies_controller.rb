@@ -1,12 +1,12 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :update, :destroy]
 
-  def api
-    omdb = ENV["OMDB_API_KEY"]
-    response = RestClient.get("http://www.omdbapi.com/?i=tt3896198&apikey=#{omdb}")
-    json = JSON.parse(response)
-    render json: json
-  end 
+  # def api
+  #   omdb = ENV["OMDB_API_KEY"]
+  #   response = RestClient.get("http://www.omdbapi.com/?i=tt3896198&apikey=#{omdb}")
+  #   json = JSON.parse(response)
+  #   render json: json
+  # end 
 
   # GET /movies
   def index
