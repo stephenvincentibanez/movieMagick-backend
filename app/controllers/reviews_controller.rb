@@ -8,9 +8,10 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1
-  # def show
-  #   render json: review
-  # end
+  def show
+    review = Review.find_by_id(params[:id])
+    render json: review
+  end
 
   # POST /reviews
   def create

@@ -3,9 +3,8 @@ class WatchlistsController < ApplicationController
 
   # GET /watchlists
   def index
-    @watchlists = Watchlist.all
-
-    render json: @watchlists
+    watchlists = Watchlist.all
+    render json: watchlists
   end
 
   # GET /watchlists/1
@@ -15,12 +14,12 @@ class WatchlistsController < ApplicationController
 
   # POST /watchlists
   def create
-    @watchlist = Watchlist.new(watchlist_params)
+    watchlist = Watchlist.new(watchlist_params)
 
-    if @watchlist.save
-      render json: @watchlist, status: :created, location: @watchlist
+    if watchlist.save
+      render json: watchlist, status: :created, location: watchlist
     else
-      render json: @watchlist.errors, status: :unprocessable_entity
+      render json: watchlist.errors, status: :unprocessable_entity
     end
   end
 
