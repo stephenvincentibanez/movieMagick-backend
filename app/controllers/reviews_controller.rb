@@ -40,6 +40,10 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find_by_id(params[:id])
     review.destroy
+    render json: {
+      status: :destroyed,
+      review:review
+    }
   end
 
   private

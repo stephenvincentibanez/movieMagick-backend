@@ -35,7 +35,12 @@ class WatchlistsController < ApplicationController
 
   # DELETE /watchlists/1
   def destroy
-    @watchlist.destroy
+    watchlist = Watchlist.find_by_id(params[:id])
+    watchlist.destroy
+    render json: {
+        status: :destroyed,
+        watchlist:watchlist
+    }
   end
 
   private
