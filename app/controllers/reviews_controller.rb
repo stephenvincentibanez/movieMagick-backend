@@ -38,7 +38,8 @@ class ReviewsController < ApplicationController
 
   # DELETE /reviews/1
   def destroy
-    @review.destroy
+    review = Review.find_by_id(params[:id])
+    review.destroy
   end
 
   private
