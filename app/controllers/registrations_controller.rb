@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
         session[:user_id] = user.id 
         render json: {
             status: :created,
-            user: user
+            user: UserSerializer.new(user)
         }
     else
         render json: { status: 500 }

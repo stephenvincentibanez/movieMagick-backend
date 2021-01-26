@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params["user"]["username"]).try(:authenticate, params["user"]["password"])
         if user
             session[:user_id] = user.id
-            render json: {status: :created, logged_in: true, user: user}
+            render json: {status: :created, logged_in: true, user: UserSerializer.new(user)}
         else
             render json: {status: 401}
         end

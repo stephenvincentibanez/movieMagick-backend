@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         if user.save
             render json: {
                 status: :updated,
-                user: user
+                user: UserSerializer.new(user)
         }
         else
             render json: user.errors
