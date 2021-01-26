@@ -10,6 +10,9 @@
 require 'rest-client'
 
 Movie.destroy_all
+User.destroy_all
+Review.destroy_all
+Watchlist.destroy_all
 
 id = ['tt3896198', 'tt0068646', 'tt1411697', 'tt0120737', 'tt2948372', 'tt0332379', 'tt0246578', 'tt6751668', 'tt0123073', 'tt7784604', 'tt0388795', 'tt0087363']
 
