@@ -9,6 +9,10 @@ class UserSerializer < ActiveModel::Serializer
     object.watchlists
   end
 
+  def reviews
+    object.reviews
+  end 
+
   has_many :reviews
   has_many :watchlists
 end
