@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   get "/search", to: "search#show"
   root to: 'static#home'
+  # root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -9,6 +9,4 @@ class ReviewSerializer < ActiveModel::Serializer
     object.user
   end
 
-  # belongs_to :user
-  # belongs_to :movie
 end
